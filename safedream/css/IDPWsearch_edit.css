@@ -13,6 +13,7 @@
     --color-btn-red: #FF3131;
     --font-subtitle: 18px;
     --size-border-radius: 13px;
+    --color-box-back: #9999ae;
 }
 
 @font-face {
@@ -237,10 +238,11 @@ img {
 
  /****** ID / PW 찾기  ******/
 
+
 .noticeBoxID {
-    border: none;
+    border: 1px solid white;
     width: 50%;
-    background-color: var(--color-login-back);
+    background-color: var(--color-box-back);
     padding: 30px;
     color: white;
     border-radius: 10px;

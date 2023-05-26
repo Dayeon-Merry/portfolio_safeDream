@@ -1,55 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="backimg">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>최초의 내 사이트 </title>
-    <style>
-        @font-face {
-            font-family: 'KCC-Ganpan';
-            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCC-Ganpan.woff2') format('woff2');
-            font-weight: normal;
-            font-style: normal;
-        }
-
-        .fontF {font-family: 'KCC-Ganpan';}
-
-        body {text-align: center; margin: auto;}
-        h2 {border: 3px dotted deepskyblue; background-color: deepskyblue; color: #fff;}
-        li {display: inline; margin: 30px;}
-        
-    </style>
+    <link rel="stylesheet" href="./css/login_edit.css">
+    <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.min.js" integrity="sha384-dpu02ieKC6NUeKFoGMOKz6102CLEWi9+5RQjWSV0ikYSFFd8M3Wp2reIcquJOemx" crossorigin="anonymous"></script>
+    <script src="./login.js"></script>
+    <title>지켜Dream</title>
 </head>
+
 <body>
-    <h1 class="fontF">상달이 홈페이지</h1>
-    <p>최초의 상달이 홈페이지 오신 걸 환영합니다.</p>
-    <img src="images/my.png" alt="내사진">
-    <p class="fontF"><a href="./resume.html">이력서</a></p>
-
-    <h2 class="fontF">2023.03.28 과제</h2>
-    <li class="fontF"><a href="./new.html" target="_blank">뉴스기사</a></li>
-    <li class="fontF"><a href="./bookmark.html" target="_blank">즐겨찾기</a></li>
-
-    <h2 class="fontF">2023.03.29 과제</h2>
-    <li class="fontF"><a href="./userinput0329.html" target="_blank">회원가입</a></li>
-    <li class="fontF"><a href="./login.html" target="_blank">로그인</a></li>
-    
-    <h2 class="fontF">2023.04.03 과제</h2>
-    <li class="fontF"><a href="./clonecoding.html" target="_blank">상달이의 티스트로</a></li>
-
-    <h2 class="fontF">2023.04.07 과제</h2>
-    <li class="fontF"><a href="./time.html" target="_blank">시간 추출 </a></li>
-    <li class="fontF"><a href="./RockPaperScissors.html" target="_blank">가위바위보 게임</a></li>
-    <li class="fontF"><a href="./lottoNO.html" target="_blank">로또 뽑기</a></li>
-
-    <h2 class="fontF">2023.04.08 과제(정규 표현식이 적용된 회원가입창)</h2>
-    <li class="fontF"><a href="./userinput.html" target="_blank">회원가입</a></li>
-
-    <h2 class="fontF">2023.04.17 과제프로젝트 홈페이지(팀과제)</h2>
-    <li class="fontF"><a href="./Porindex.html" target="_blank">프로젝트</a></li>
-
-    <h2 class="fontF">2023.05 지켜Dream</h2>
-    <li class="fontF"><a href="./team/login_edit.html" target="_blank">프로젝트</a></li>
+    <div id="imgbox">
+        <img id="logo" src="./images/logo.png" alt="">
+    </div>
+    <div class="content">
+        <div class="nav">
+            <div id="login_input">
+                <p class="text">아이디</p>
+                <input type="text" id="userid" class="input" maxlength="20" placeholder="아이디를 입력하세요."><br>
+                <p class="text">비밀번호</p>
+                <input type="password" id="userpw" class="input" maxlength="20" placeholder="비밀번호를 입력하세요." style="font-family:none !important">
+                <!-- <p id="auto_login"><input type="checkbox" name="Auto-Login" value="자동로그인" id="auto_check">자동로그인</p> -->
+                <div class="center"> <button class="btn" onclick="location.href='./agree_service.html'">회원가입</button>
+                <button class="btn" onclick="loginSrv()">로그인</button></div>
+                <hr>
+                <div type="button" class="btn_search" onclick="location.href='./IDPWsearch_edit.html'">아이디/비밀번호 찾기</div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
 </body>
 </html>

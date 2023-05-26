@@ -1,11 +1,11 @@
 // API 경로
-const BASE_API_URL = 'http://localhost:3000/safedream';
+const URL_signup = 'https://port-0-safedream-backend-otjl2cli33x5tw.sel4.cloudtype.app';
 
 // 아이디 중복확인 함수
 function checkUserID() {
     
     const userid = document.getElementById('userid').value;
-    fetch(`${BASE_API_URL}/check?userid=${userid}`)
+    fetch(`${URL_signup}/check?userid=${userid}`)
         .then(response => response.json())
         .then(data => {
             if (data.message) {
@@ -30,7 +30,7 @@ function registerUser() {
 
     const userData = {username, userid, password, hp, guardianHp};
 
-    fetch(`${BASE_API_URL}/register`, {
+    fetch(`${URL_signup}/safedream/register`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

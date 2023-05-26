@@ -276,11 +276,12 @@ li.date {
 .sidebar{
     display: none;
     position: absolute;
-    z-index: 1;
+    z-index: 200;
+    box-shadow: 5px 5px 5px 5px #63636377;
 }
 .sidebar.active{
     width: 50%;
-    height: 140%;
+    height: 100%;
     top: 0;
     right: 0;
     display: block;
@@ -317,6 +318,7 @@ li.date {
     width: 100%;
     text-decoration: none;
     font-size: medium;
+    color: black;
 }
 a.main {
     color: black;

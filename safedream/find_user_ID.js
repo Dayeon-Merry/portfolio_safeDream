@@ -1,40 +1,37 @@
-const BASE_API_URL = 'http://localhost:3000/user';
+const URL_find = 'https://port-0-safedream-backend-otjl2cli33x5tw.sel4.cloudtype.app';
 
-window.onload = function() {
-    document.getElementById('findIdBtn').addEventListener('click', findUserID);
-}
+
 
 function findUserID() {
     const username = document.getElementById('username').value;
     const HP = document.getElementById('HP').value;
 
-    fetch(`${BASE_API_URL}/findUserID`, {
+    fetch(`${URL_find}/safedream/findUserID`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({ username, HP })
     })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Server Error');
-        }
-        return response.json();
-    })
-    .then(data => {
-        document.getElementById('noticeBoxID').style.display = "block";
-        if (data.error) {
-            document.getElementById('userIDMessage').textContent = "이름과 전화번호가 맞지 않습니다.";
-            document.getElementById('loginButton').style.display = "none";
-        } else {
-            document.getElementById('userIDMessage').innerHTML = "아이디 : " + data.foundUserID + "<br> 이 메세지는 5초뒤에 사라집니다";
-        }
-        // 5초 후에 메시지 숨기기
-        setTimeout(() => {
-            document.getElementById('noticeBoxID').style.display = 'none';
-        }, 5000);
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+            let IDbox = document.querySelector('.noticeBoxID');
+            IDbox.style.display = "block";
+            // console.log(data);
+
+            if (data.error) {
+                document.querySelector('.noticeBoxID').innerHTML = `<p style="color:black">이름 및 전화번호를 확인해주세요.</p>
+                <button class="btn" id="loginButton" onclick="location.href='./IDPWsearch_edit.html'">다시시도</button>`;
+
+            } else {
+                IDbox.innerHTML = `<p style="color:black">아이디 : ${data.foundUserID}</p>
+                <button class="btn" id="loginButton" onclick="location.href='./index.html'">로그인</button>`;
+
+             }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
 }

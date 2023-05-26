@@ -1,5 +1,5 @@
 // API 경로
-const BASE_API_URL = 'http://localhost:3000/safedream';
+const URL_update = 'https://port-0-safedream-backend-otjl2cli33x5tw.sel4.cloudtype.app';
 const token = localStorage.getItem('token');
 
 
@@ -24,7 +24,7 @@ function handleUpdate() {
         guardianHp: guardianHp
     };
 
-    fetch(`${BASE_API_URL}/update`, {
+    fetch(`${URL_update}/safedream/update`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -36,6 +36,7 @@ function handleUpdate() {
             if (response.ok) {
                 alert('정보가 성공적으로 수정되었습니다.');
                 // 페이지 리디렉션 또는 다른 작업 수행
+                location.href = './Main_1.html'
             } else {
                 alert('정보 수정에 실패했습니다.');
                 // 에러 처리 등의 동작 수행
@@ -48,7 +49,7 @@ function handleUpdate() {
 }
 
 function userDelete() {
-    fetch(`${BASE_API_URL}/delete`, {
+    fetch(`${URL_update}/safedream/delete`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',

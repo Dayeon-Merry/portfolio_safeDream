@@ -2,8 +2,9 @@ const token = localStorage.getItem('token'); // 토큰을 로컬 스토리지에
 
 function fetchDataWithToken() {
     
+  const URL = 'https://port-0-safedream-backend-otjl2cli33x5tw.sel4.cloudtype.app';
   
-    fetch('http://localhost:3000/index', {
+    fetch(`${URL}/admin/index`, {
       method: 'GET',
       headers: {
         'Authorization': 'Bearer ' + token // 가져온 토큰을 헤더에 추가

@@ -109,9 +109,10 @@ p.up_text{
     color: #000;
 }
 
+
 .content {
     /* overflow: ; */
-    height: 70%;
+    height: 50%;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -134,10 +135,10 @@ div.nav{
     overflow: hidden;
 }
 #login_input{
-    /* height: 70%; */
+    /* height: 85%; */
     display: flex;
     flex-direction: column;
-    justify-content:space-around;
+    justify-content:space-between;
 }
 
 #auto_login{
@@ -156,6 +157,7 @@ div.nav{
 .center {
     display: flex;
     justify-content: space-between;
+    margin-top: 15px;
 }
 
 div.btn_update{
@@ -185,7 +187,7 @@ div.btn_update{
     display: inline-block;
 }
 hr {
-    border-color: #000;
+    border-color: #00000073;
     color: #000;
     width: 95%;
 }

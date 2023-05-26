@@ -1,13 +1,15 @@
 let postIds = []
 const token = localStorage.getItem('token'); // 토큰을 로컬 스토리지에서 가져옴
 let page = 0
+const server = 'https://port-0-safedream-backend-otjl2cli33x5tw.sel4.cloudtype.app';
+
 // 무한 스크롤 적용 코드
 
 function fetchData(page) {
   let selectedCategory = categorySelect.value;
-  fetch(`http://localhost:3000/safedream/board_user?category=${selectedCategory}&page=${page}`, {
+  fetch(`${server}/safedream/board_user?category=${selectedCategory}&page=${page}`, {
     method: 'GET',
-     headers: {
+      headers: {
       'Authorization': 'Bearer ' + token // 가져온 토큰을 헤더에 추가
     }
   }).then(response => response.json())

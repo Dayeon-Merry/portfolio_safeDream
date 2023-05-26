@@ -1,10 +1,11 @@
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const post_id = urlParams.get('post_id');
+const URL = 'https://port-0-safedream-backend-otjl2cli33x5tw.sel4.cloudtype.app';
 const token = localStorage.getItem('token'); // 토큰을 로컬 스토리지에서 가져옴
 
 document.addEventListener('DOMContentLoaded', () => {
-    fetch(`http://localhost:3000/board-read1?post_id=${post_id}`, {
+    fetch(`${URL}/admin/board-read1?post_id=${post_id}`, {
       method: 'GET',
       headers: {
         'Authorization': 'Bearer ' + token // 가져온 토큰을 헤더에 추가
@@ -28,9 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   )
 
- const DeleteBtn = document.getElementById("btn-delete-board")
- DeleteBtn.addEventListener('click', () => {
-  fetch(`http://localhost:3000/board-read1?post_id=${post_id}`,
+const DeleteBtn = document.getElementById("btn-delete-board")
+DeleteBtn.addEventListener('click', () => {
+  fetch(`${URL}/board-read1?post_id=${post_id}`,
   {
     method: 'DELETE',
     headers: {
@@ -43,8 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error(error);
       alert('데이터 전송에 실패했습니다.');
     })
- })
- function clearToken() {
+})
+function clearToken() {
   console.log(token);
   localStorage.clear(token);
   console.log('토큰 삭제 완료');

@@ -259,11 +259,12 @@ p {
 .sidebar{
     display: none;
     position: absolute;
-    z-index: 1;
+    z-index: 200;
+    box-shadow: 5px 5px 5px 5px #63636377;
 }
 .sidebar.active{
     width: 50%;
-    height: 140%;
+    height: 100%;
     top: 0;
     right: 0;
     display: block;
@@ -300,6 +301,7 @@ p {
     width: 100%;
     text-decoration: none;
     font-size: medium;
+    color: black;
 }
 a.main {
     color: black;
@@ -326,11 +328,10 @@ a.sub:visited {
 }
 hr {
     border: 1px solid var(--color-login-back);
-    width: 98%;
-    margin: 0 auto ;
+    width: 97%;
+    margin: 0 auto;
     margin-top: 10px;
 }
-
 
 
 

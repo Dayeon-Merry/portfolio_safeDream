@@ -122,7 +122,25 @@ export async function deleteUser(req, res) {
     }
 }
 
-
+// 유저 아이디 찾기 함수
+export async function findUserId(req, res) {
+    const username = req.body.username;
+    const HP = req.body.HP;
+    if (!username || !HP) {
+        return res.status(400).json({error: '이름과 전화번호를 입력해 주세요.'});
+    }
+    try {
+        const [result] = await pool.query(`SELECT userid FROM user WHERE username=? AND HP=?`, [username, HP]);
+        if (result.length > 0) {
+            return res.status(200).json({foundUserID: result[0].userid});
+        } else {
+            return res.status(400).json({error: '이름과 전화번호가 맞지 않습니다.'});
+        }
+    } catch (err) {
+        console.log(err);
+        return res.status(500).json({error: '서버 오류'});
+    }
+}
 // 토큰 인증방식 
 export async function me (req, res, next){
     const user = await adminRepository.findById(req.userid);

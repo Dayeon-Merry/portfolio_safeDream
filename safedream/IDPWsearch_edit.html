@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/IDPWsearch_edit.css">
     <script src="update.js"></script>
+    <script src="find_user_ID.js"></script>
     <title>지켜Dream</title>
 </head>
 <body>
@@ -20,10 +21,10 @@
                 <input type="text" id="username" class="input" maxlength="20" placeholder="이름을 입력하세요.">
                 <p class="text">휴대폰 번호</p>
                 <input type="text" id="HP" class="input" maxlength="20" placeholder="핸드폰 번호를 입력하세요.">
-                <button class="btn" onclick="alertToggle()">아이디 찾기</button>
+                <button class="btn" onclick="findUserID()">아이디 찾기</button>
                 <div class="noticeBoxID">
                     <p style="color:black">아이디 : </p>
-                    <button class="btn" onclick="location.href='./login_edit.html'">로그인</button>
+                    <button class="btn" id="loginButton" onclick="location.href='./index.html'">로그인</button>
                 </div>
             </div>
             <div id="textbox_pw">

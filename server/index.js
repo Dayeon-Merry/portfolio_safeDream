@@ -13,13 +13,12 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 app.use(morgan("tiny")); // 요청온거 확인하게 
-app.use(adminRouter);
-app.use("/user", userRouter); // 회원관리 
-app.use("/safedream", dreamRouter);
+app.use("/admin", adminRouter);  // admin
+app.use("/user", userRouter); // admin에서 회원관리 
+app.use("/safedream", dreamRouter); //사용자 
 
 
 
 app.listen(config.host.port, () => {
     console.log(`Server is running on port ${config.host.port}`);
 });
-

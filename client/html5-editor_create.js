@@ -2,6 +2,9 @@ const token = localStorage.getItem('token'); // 토큰을 로컬 스토리지에
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('myForm'); // 폼 요소의 ID를 지정해야 합니다
+  const URL = 'https://port-0-safedream-backend-otjl2cli33x5tw.sel4.cloudtype.app';
+
+
   form.addEventListener('submit', (e) => {
     e.preventDefault(); // 폼 제출 기본 동작을 막습니다.
 
@@ -14,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     // console.log(formData.get('category'))
     // 서버로 데이터를 전송합니다.
-    fetch('http://localhost:3000/html5-editor', {
+    fetch(`${URL}/admin/html5-editor`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

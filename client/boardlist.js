@@ -6,7 +6,9 @@ let page = 0
 
 function fetchData(page) {
   let selectedCategory = categorySelect.value; 
-  fetch(`http://localhost:3000/board?category=${selectedCategory}&page=${page}`, {
+  const URL = 'https://port-0-safedream-backend-otjl2cli33x5tw.sel4.cloudtype.app';
+
+  fetch(`${URL}/admin/board?category=${selectedCategory}&page=${page}`, {
     method: 'GET',
     headers: {
       'Authorization': 'Bearer ' + token // 가져온 토큰을 헤더에 추가

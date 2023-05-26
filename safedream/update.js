@@ -1,3 +1,6 @@
+const URL_update2 = 'https://port-0-safedream-backend-otjl2cli33x5tw.sel4.cloudtype.app';
+
+
 let switchNow = false;    //스위치 상태 기억할 변수
 function delToggle() {
     console.log("object");
@@ -23,6 +26,7 @@ function singo_btn(guardianHp) {
     const smsButton = document.getElementById('sms');
     const tel = "document.location.href = 'tel:112'"; // 경찰서로 고정 될거기때문에 const
     let sms = "document.location.href = ";// 내용물을 받아와야 해서 let으로 변수 선언
+
     singo.forEach((data) => {
         data.classList.toggle('active');
         if (data.classList.contains('active')) {
@@ -36,7 +40,7 @@ function singo_btn(guardianHp) {
     if (/iphone|ipad|ipod/.test(userAgent)) {
         // iOS 처리 코드 추가
         console.log("iOS에서 실행 중입니다.");
-        sms += `sms:${guardianHp}?body=고객님의 소중한 가족이 위험합니다`;
+        sms += `sms:${guardianHp}&body=고객님의 소중한 가족이 위험합니다`;
     } else if (/android/.test(userAgent)) {
         // Android 처리 코드 추가
         console.log("Android에서 실행 중입니다.");
@@ -126,22 +130,22 @@ function clearToken() {
 async function getGuardianHp() {
     try {
       const token = localStorage.getItem('token'); // 토큰 가져오기
-      const response = await fetch('http://localhost:3000/safedream/guardianHp', {
+        const response = await fetch(`${URL_update2}/safedream/guardianHp`, {
         method: 'GET',
         headers: {
-          'Content-Type': 'application/json',
-          'Authorization': 'Bearer ' + token // 가져온 토큰을 헤더에 추가
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token // 가져온 토큰을 헤더에 추가
         }
-      });
-      if (response.ok) {
+    });
+    if (response.ok) {
         const data = await response.json();
         console.log("-----------------data.guardianHp----------------");
         console.log(typeof(data.guardianHp));
         singo_btn(data.guardianHp)
-      } else {
+    } else {
         throw new Error('서버 요청에 실패하였습니다.');
-      }
-    } catch (error) {
-      console.error(error);
     }
-  }
+    } catch (error) {
+        console.error(error);
+    }
+}

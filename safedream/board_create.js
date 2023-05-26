@@ -1,4 +1,6 @@
 const token = localStorage.getItem('token'); // 토큰을 로컬 스토리지에서 가져옴
+const URL_create = 'https://port-0-safedream-backend-otjl2cli33x5tw.sel4.cloudtype.app';
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('myForm'); // 폼 요소의 ID를 지정해야 합니다
@@ -14,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     console.log(formDataJson)
     // 서버로 데이터를 전송합니다.
-    fetch('http://localhost:3000/safedream/board_create', {
+    fetch(`${URL_create}/safedream/board_create`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

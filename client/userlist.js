@@ -3,7 +3,7 @@ const token = localStorage.getItem('token'); // 토큰을 로컬 스토리지에
 // 회원 정보 조회 및 출력
 function fetchAndRenderMembers() {
 
-  fetch('http://localhost:3000/user/', {
+  fetch('https://port-0-safedream-backend-otjl2cli33x5tw.sel4.cloudtype.app/user', {
     method: 'GET',
     headers: {
       'Authorization': 'Bearer ' + token // 가져온 토큰을 헤더에 추가
@@ -89,7 +89,7 @@ function addMember() {
       hp: addForm.elements.hp.value,
     };
     
-    fetch('http://localhost:3000/user', {
+    fetch('https://port-0-safedream-backend-otjl2cli33x5tw.sel4.cloudtype.app/user', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -143,7 +143,7 @@ function addMember() {
     `;
     
     function MemberData(memberId) {
-      fetch(`http://localhost:3000/user/${memberId}`, {
+      fetch(`https://port-0-safedream-backend-otjl2cli33x5tw.sel4.cloudtype.app/user/${memberId}`, {
         method: 'GET',
         headers: {
           'Authorization': 'Bearer ' + token // 가져온 토큰을 헤더에 추가
@@ -169,7 +169,7 @@ function addMember() {
       hp: updateForm.elements.hp.value,
     };
     
-    fetch(`http://localhost:3000/user/${memberId}`, {
+    fetch(`https://port-0-safedream-backend-otjl2cli33x5tw.sel4.cloudtype.app/user/${memberId}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -204,7 +204,7 @@ document.addEventListener('click', function (event) {
     const token = localStorage.getItem('token'); // 토큰을 로컬 스토리지에서 가져옴
     
     // 서버로 회원 삭제 요청
-    fetch(`http://localhost:3000/user/${memberId}`, {
+    fetch(`https://port-0-safedream-backend-otjl2cli33x5tw.sel4.cloudtype.app/user/${memberId}`, {
       method: 'DELETE',
       headers: {
         'Authorization': 'Bearer ' + token // 가져온 토큰을 헤더에 추가

@@ -1,13 +1,14 @@
 function loginSrv() {
   const userid = document.getElementById('userid').value;
   const password = document.getElementById('userpw').value;
-  
+  const URL_login = 'https://port-0-safedream-backend-otjl2cli33x5tw.sel4.cloudtype.app';
+
   const data = {
     userid: userid,
     password: password
   };
 
-  fetch('http://localhost:3000/safedream/login', {
+  fetch(`${URL_login}/safedream/login`, {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json'
