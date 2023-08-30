@@ -11,7 +11,4 @@
 
 
 # App 대표 이미지
-![image]([https://github.com/leeCodingStudio/Medimate/assets/115694780/fd90a52b-2919-458e-acc4-a1d89836d16e])
-<p align="center"><img src='https://github.com/Dayeon-Merry/portfolio_safeDream/assets/131240376/fb8ff660-920d-4899-96ed-165b24f60821' width="800"></p>
-![Untitled](https://github.com/Dayeon-Merry/portfolio_safeDream/assets/131240376/0f70a3ff-ca2e-420d-973a-5c9a4ba61506)
-![Untitled](https://github.com/Dayeon-Merry/portfolio_safeDream/assets/131240376/fd90a52b-2919-458e-acc4-a1d89836d16e)
+![safedream_img](https://github.com/Dayeon-Merry/portfolio_safeDream/assets/131240376/26df158e-4b4b-48d3-90f0-b49be4e2cb0b)
